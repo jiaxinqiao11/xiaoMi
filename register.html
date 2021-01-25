@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米帐号 -注册</title>
+    <link type="favicon" rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+</head>
+
+<body>
+    <div id="register">
+        <div class="register-wrap">
+            <h2>
+                <img src="./favicon.ico">
+            </h2>
+            <h1>注册小米账号</h1>
+            <div class="zhanghao">
+                <p class="name">姓名</p>
+                <input type="text" placeholder="请输入姓名" id="username">
+                <p class="later">成功注册账号后,姓名将不能被改变</p>
+                <p class="pass">密码</p>
+                <input type="password" placeholder="请输入密码" id="password"><br>
+                <input type="button" value="立即注册" id="btn">
+            </div>
+            <p id="read">已阅读并同意: 小米<span>用户协议</span>和<span>隐私政策</span></p>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-wrap">
+            <ul>
+                <li>简体&nbsp;&nbsp;|</li>
+                <li>繁体&nbsp;&nbsp;|</li>
+                <li>English&nbsp;&nbsp;|</li>
+                <li>常见问题</li>
+            </ul>
+            <p>小米公司版权所有-京ICP备10046444-<i></i>-京ICP证110507号</p>
+        </div>
+    </div>
+    <script>
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let btn = document.getElementById("btn");
+        btn.onclick = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get", "http://127.0.0.1:8080/register?name=" + username.value + "&password=" + password.value);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.responseText === "error") {
+                        alert("注册失败,该用户已存在")
+                    }
+                    if (xhr.responseText === "success") {
+                        alert("用户注册成功");
+                        location.href = "http://127.0.0.1/小米商城/index.html"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
