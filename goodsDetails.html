@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>小米11 轻装上阵</title>
+    <link type="favicon" rel="shortcut icon" href="./favicon.ico">
     <link rel="stylesheet" href="css/goodDetails.css">
     <link rel="stylesheet" href="fonts/iconfont.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <script src="js/goodDetails.js"></script>
-    <script src="../jquery.min.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script src="./js/goodsDetails.js"></script>
+
 </head>
 
 <body>
@@ -28,6 +30,8 @@
                     </div>
                     <div class="right">
                         <a href="#">概述</a>
+                        <span class="seperate">|</span>
+                        <a href="#">参数</a>
                         <span class="seperate">|</span>
                         <a href="#">F码通道</a>
                         <span class="seperate">|</span>
@@ -174,54 +178,19 @@
                         <li id="nav-li">
                             <a href="#" id="aaa">小米手机</a>
                             <div class="item-children">
-                                <ul class="children-list">
-                                    <li>
-                                        <a href="#">
-                                            <div class="figure">
-                                                <img src="./img/1.webp">
-                                            </div>
-                                            <div class="title">小米11</div>
-                                            <p class="price">3999元起</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="figure">
-                                                <img src="./img/2.webp">
-                                            </div>
-                                            <div class="title">小米10至尊纪念版</div>
-                                            <p class="price">5299元起</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="figure">
-                                                <img src="./img/3.webp">
-                                            </div>
-                                            <div class="title">小米10</div>
-                                            <p class="price">3399元</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="figure">
-                                                <img src="./img/4.webp">
-                                            </div>
-                                            <div class="title">小米10 青春版 5G</div>
-                                            <p class="price">1999元</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="figure">
-                                                <img src="./img/5.webp">
-                                            </div>
-                                            <div class="title"> 小米MIX Alpha</div>
-                                            <p class="price">19999元</p>
-                                        </a>
-                                    </li>
+                                <ul class="children-list" id="one">
+
                                 </ul>
                             </div>
+                        <li id="template">
+                            <a href="#">
+                                <div class="figure" id="figgr">
+                                    <img src="">
+                                </div>
+                                <div class="title" id="titl"> </div>
+                                <p class="price" id="pri"></p>
+                            </a>
+                        </li>
                         </li>
                         <li id="nav-li">
                             <a href="#" id="aaa">Redmi红米</a>
@@ -612,67 +581,84 @@
                     <div class="right">
                         <a href="#">概述</a>
                         <span class="seperate">|</span>
+                        <a href="#">参数</a>
+                        <span class="seperate">|</span>
                         <a href="#">F码通道</a>
                         <span class="seperate">|</span>
                         <a href="#">咨询客服</a>
                         <span class="seperate">|</span>
                         <a href="#">用户评价</a>
-
+                        <a href="#">
+                            <p id="purse">立即购买</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </article>
     <div class="fangbian w">
-
+        <img src="img/seciton1-2.png">
     </div>
-    <script>
-        let allProducts = $(".allProducts");
-        let lunboLeft = $(".lunbo-left");
-        let oneLi = $(".one-li");
-        allProducts.mouseenter(function () {
-            lunboLeft.fadeIn();
-        })
-        oneLi.mouseleave(function () {
-            lunboLeft.fadeOut();
-        })
-        //页面滚动事件
-        let tops = document.querySelector("#top");
-        document.addEventListener("scroll", function () {
-            if (window.pageYOffset >= 203) {
-                tops.style.display = "block";
-            } else {
-                tops.style.display = "none";
-            }
-        })
-
-        let aa = $(".nav-ul #aaa");
-        let children = $(".item-children");
-        let navLi = $(".nav-ul #nav-li");
-        // console.log(navLi)
-        // console.log(children);
-        // console.log(aa);
-        for (var i = 0; i < aa.length; i++) {
-            aa.eq(i).mouseenter(function () {
-                let index = aa.index($(this));
-                for (var j = 0; j < children.length; j++) {
-                    children.eq(index).fadeIn();
-                }
-            })
-            navLi.eq(i).mouseleave(function () {
-                // alert(1);
-                let index = navLi.index($(this));
-                for (var j = 0; j < children.length; j++) {
-                    children.eq(index).fadeOut();
-                }
-            })
-
-        }
-
-
-
-
-    </script>
+    <div class="video">
+        <div class="showText">
+            <video src="./video/section2-1.mp4" class="vid" autoplay="autoplay" muted="muted" loop="loop"></video>
+            <div class="word">
+                <div class="text">观看视频</div>
+                <span id="bofang"></span>
+            </div>
+        </div>
+        <div class="bigVideo">
+            <video src="./video/section2-1.mp4" preload="none" id="miPlayerVideo"></video>
+        </div>
+        <div class=" thin">好轻，好薄，一块好屏
+        </div>
+        <div class="desc">
+            方方面面的新突破，开启了 2021 年高端旗舰的新标准。
+            <br>
+            它轻薄、出彩 - 带来一块创下 13 项纪录的高端屏幕。
+            <br>
+            更快的速度、更强大的影像系统，以及全面飞跃的视听体验。
+            <br>
+            种种突破，共同成就了这款 2021 年小米高端代表作，助你轻装上阵，一往无前。
+        </div>
+        <ul class="feature-list">
+            <li>
+                全新骁龙888，突破性的 5 纳米芯片工艺，
+                <br>
+                性能、渲染、AI 算力突飞猛进。
+                <div class="hr"></div>
+            </li>
+            <li>
+                2K AMOLED 四曲面柔性屏，10 亿色原色屏，
+                <br>
+                获 DisplayMate A+ 权威认证。
+                <br>
+                <div class="hr"></div>
+            </li>
+            <li>
+                harman kardon
+                <span>®</span>
+                哈曼卡顿
+                <br>
+                高音质立体声双扬声器
+                <br>
+                <div class="hr"></div>
+            </li>
+            <li>
+                1 亿像素计算摄影，
+                <br>
+                视频版超级夜景。
+                <br>
+                <div class="hr"></div>
+            </li>
+            <li>
+                轻薄机身大电量，
+                <br>
+                4600mAh + 55W 有线闪充。
+                <br>
+            </li>
+        </ul>
+    </div>
 
 </body>
 
