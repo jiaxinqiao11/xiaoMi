@@ -8,6 +8,8 @@
     <link type="favicon" rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/shoppingCar.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/shoppingCar.js"></script>
 </head>
 
 <body>
@@ -25,9 +27,9 @@
                     </h2>
                 </div>
                 <div class="login">
-                    <a href="login.html">登录</a>
+                    <a href="http://127.0.0.1/小米项目/login.html">登录</a>
                     <span>|</span>
-                    <a href="register.html">注册</a>
+                    <a href="http://127.0.0.1/小米项目/register.html">注册</a>
                 </div>
             </div>
         </div>
@@ -35,13 +37,84 @@
     <div class="empty-cart-top">
         <div class="empty-car">
             <div class="container">
-                <h2>
-                    您的购物车还是空的！
+                <div class="two">
+                    <h2>
+                        您的购物车还是空的！
+                    </h2>
+                    <p class="login-desc">登录后将显示您之前加入的商品</p>
+                    <a href="http://127.0.0.1/小米项目/login.html" class="login-ins btn">立即登录</a>
+                    <a href="http://127.0.0.1/小米项目/Jiesuan.html" class="btn shop-ins">马上去购物</a>
+                </div>
+            </div>
+            <div class="empty-cart-bottom">
+                <h2 class="recommend-title">
+                    <span>为您推荐</span>
                 </h2>
-                <p>登录后将显示您之前加入的商品</p>
+                <div class="recommend_cart">
+                    <ul id="recommend">
+
+                    </ul>
+                    <li id="template">
+                        <a href="#">
+                            <img src="">
+                            <div class="recommend-name"></div>
+                            <div class="recommend-price"></div>
+                            <div class="recommend-tips"></div>
+                        </a>
+                        <div class="recommend-action">
+                            <a href="#">加入购物车</a>
+                        </div>
+                    </li>
+                </div>
             </div>
         </div>
     </div>
+    <div class="footer">
+        <div class="footer-service w">
+            <img src="img/a.png">
+        </div>
+        <div class="footer-foot w">
+            <dl>
+                <dt>帮助中心</dt>
+                <dd>账户管理</dd>
+                <dd>购物指南</dd>
+                <dd>订单操作</dd>
+            </dl>
+            <dl>
+                <dt>服务支持</dt>
+                <dd>售后政策</dd>
+                <dd>自助服务</dd>
+                <dd>相关操作</dd>
+            </dl>
+            <dl>
+                <dt>线下门店</dt>
+                <dd>小米之家</dd>
+                <dd>服务网点</dd>
+                <dd>授权体验店</dd>
+            </dl>
+            <dl>
+                <dt>关于小米</dt>
+                <dd>了解小米</dd>
+                <dd>加入小米</dd>
+                <dd>投资者关系</dd>
+                <dd>廉洁举报</dd>
+            </dl>
+            <dl>
+                <dt>关注我们</dt>
+                <dd>新浪微博</dd>
+                <dd>官方微信</dd>
+                <dd>练习我们</dd>
+                <dd>公益基金会</dd>
+            </dl>
+            <dl>
+                <dt>特色服务</dt>
+                <dd>F码通道</dd>
+                <dd>礼物码</dd>
+                <dd>防伪查询</dd>
+            </dl>
+        </div>
+    </div>
+    <!-- footer部分  end -->
 </body>
 
 </html>
