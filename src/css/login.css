@@ -1,0 +1,207 @@
+@charset "utf-8";
+body {
+    position: relative;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+#nav {
+    width: 1349px;
+    height: 97px;
+    background-color: #FFFFFF;
+    margin: auto;
+}
+/* 版心 */
+.nav-m {
+    width: 1130px;
+    height: 97px;
+    /* background-color: red; */
+    margin:0 auto;
+}
+.h_logo  {
+    width: 200px;
+    height: 98px;
+    background-image: url(../img/mistore_logo.png);
+}
+#banner{
+    background-color: yellow;
+    background: url(../img/loginlunbo.jpg) no-repeat;
+    width: 100%;
+    height: 588px;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+}
+.login {
+    width: 411px;
+    height: 556px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 33px;
+    right: 100px;
+}
+.login .top {
+    width: 346px;
+    height: 82px;
+    /* background-color: green; */
+    margin-left: 32px;
+}
+.login .top li {
+    list-style: none;
+    float: left;
+}
+.login .top li a {
+    width: 346px;
+    height: 82px;
+    line-height: 82px;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0 35px;
+    color: #666679;
+}
+.login .top .login-index{
+    width: 346px;
+    height: 452px;
+    /* background-color: red; */
+}
+.login .top .line {
+    height: 29px;
+    width: 2px;
+    display: inline-block;
+    background-color: #E0E0E0;
+    position: absolute;
+    top: 10px;
+    left: 199px;
+}
+.login .top #num {
+    margin-left: -37px;
+    margin-top: -17px;
+}
+.login .top #saoma {
+    margin-left: -1px;
+    margin-top: -17px;
+}
+.login .top #number {
+    color: #F56F0F;
+}
+/* .login .top #cbx {
+    width: 200px;
+    height: 20px;
+    background-color: red;
+    display: inline-block;
+} */
+.login .top input {
+    width: 346px;
+    height: 48px;
+    margin-bottom: 14px;
+    text-indent: 14px;
+    color: #969696;
+    outline: none;
+}
+.login .top #sub {
+    background-color: #FF6700;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+    border: none;
+    cursor: pointer;
+    margin-top: 14px;
+}
+.login .top p {
+    text-align: center;
+}
+.login .top a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #FF6700;
+}
+.login .top #register a {
+    color: #999999;
+    font-size: 14px;
+}
+.login .top #icon {
+    position: absolute;
+    bottom: 31px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.login .top p svg {
+    width: 30px;
+    height: 30px;
+}
+#saomaya {
+    width: 346px;
+    height: 452px;
+    text-align: center;
+}
+.top .hide {
+    display: none;
+}
+#saomaya .denglu {
+    margin-top:80px;
+    height: 10px;
+    line-height: 10px;
+    display: inline-block;
+    font-size: 14px;
+}
+#saomaya #erweima {
+    margin-top: 20px;
+}
+#saomaya .custom-qr-name {
+    margin-top: 20px;
+    font-size: 12px;
+}
+#saomaya .custom-qr-name .app {
+    color: #ff6700;
+    margin-bottom: 50px;
+}
+#saomaya .inner {
+    font-size: 14px;
+    color: #757575;
+}
+/* bottom部分 */
+.bottom {
+    width: 100%;
+    height: 180px;
+}
+.bottom .bottom-wrap {
+    width: 1130px;
+    height: 80px;
+    margin: 0 auto;
+    /* background-color: green; */
+    text-align: center;
+    padding-top: 100px;
+    line-height: 80px;
+}
+.bottom .bottom-wrap ul {
+    width: 450px;
+    height: 30px;
+    text-align: center;
+    /* background-color: red; */
+    position: absolute;
+    left: 50%;
+    margin-top: -20px;
+    transform: translate(-50%,0);
+    font-size: 14px;
+    color: #757575;
+}
+.bottom .bottom-wrap p {
+    font-size: 12px;
+    color: #757575;
+}
+li {
+    float: left;
+    list-style: none;
+}
+.bottom .bottom-wrap li {
+    padding: 0 10px;
+}
+.bottom .bottom-wrap span {
+    margin-left: 10px;
+}

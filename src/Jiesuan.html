@@ -8,6 +8,9 @@
     <link type="favicon" rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="./css/jiesuan.css">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jiesuan.js"></script>
 </head>
 
 <body>
@@ -54,31 +57,32 @@
                 </div>
 
                 <div class="item-box">
+                    <div class="goods-List">
+                    </div>
                     <!-- 商品列表 -->
-                    <div class="item-table">
+                    <div class="item-table" id="template">
                         <div class="col-check">
                             <input type="checkbox"> 全选
                         </div>
                         <div class="col-img">
-                            <img src="">
+                            <img src="" width="80" height="80">
                         </div>
                         <div class="col-name">
-                            米家直流变频落地扇1X 白色
                         </div>
-                        <div class="col-price col">299元</div>
+                        <div class="col-price col"></div>
                         <div class="col-num col">
                             <div class="change-goods-num">
-                                <a href="#">
-                                    <i></i>
+                                <a href="javascript:void(0)" class="one">
+                                    <span class="iconfont icon-zuojiantou"></span>
                                 </a>
-                                <input type="text">
-                                <a href="#">
-                                    <i></i>
+                                <input type="text" value="1" id="ipt">
+                                <a href="#" class="two">
+                                    <span class="iconfont icon-xiangyoujiantou"></span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-total col">299元</div>
-                        <div class="col-action col">操作</div>
+                        <div class="col-action col">x</div>
                     </div>
                     <!-- 结算 -->
                     <div class="cart-bar">
@@ -97,7 +101,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

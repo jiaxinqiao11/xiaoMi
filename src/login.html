@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米帐号 - 登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="./fonts/iconfont.js"></script>
+    <meta name="description" content="小米帐号能使用小米手机，MIUI，小米云，多看阅读，米聊，小米社区等小米服务。">
+    <meta name="keywords" content="小米帐号，小米账号，小米注册，注册，Mi Account，Sign in，小米，帐号，账号，小米帐户，登录，登陆，安全令牌，动态口令，小米注册，找回密码">
+    <link type="favicon" rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <script src="js/login.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="nav">
+        <div class="nav-m">
+            <div class="h_logo">
+                <a href="index.html"></a>
+            </div>
+        </div>
+    </div>
+    <div id="banner">
+        <a href=""></a>
+        <div class="login">
+            <div class="top">
+                <ul>
+                    <li id="num">
+                        <a href="#" id="number">账号登录</a>
+                    </li>
+                    <p class="line"></p>
+                    <li id="saoma">
+                        <a href="#" id="saomadeng">扫码登录</a>
+                    </li>
+                </ul>
+                <div class="login-index">
+                    <input type="text" id="username" placeholder="邮箱/手机号码/小米ID"><br>
+                    <input type="password" id="password" placeholder="密码"><br>
+                    <label>
+                        <input type="checkbox" id="cbx">30天免登陆
+                    </label>
+                    <input type="button" id="sub" value="登录">
+                    <p><a href="#">手机短信登录/注册</a></p>
+                    <p id="register"><a href="register.html">立即注册 | 忘记密码?</a></p>
+                    <p id="icon">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-QQ1"></use>
+                        </svg>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhifupingtai-zhifubao"></use>
+                        </svg>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixin"></use>
+                        </svg>
+                    </p>
+                </div>
+                <div class="hide" id="saomaya">
+                    <p class="denglu">请使用小米手机/米家等小米旗下APP扫码登录
+                        <i></i>
+                    </p>
+                    <img src="./img/erweima.png" id="erweima">
+                    <p class="custom-qr-name">使用<span class="app">小米商城APP</span>扫一扫</p>
+                    <p class="inner">小米手机可打开「设置」>「小米帐号」扫码登录</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-wrap">
+            <ul>
+                <li>简体<span>|</span></li>
+                <li>繁体<span>|</span></li>
+                <li>English<span>|</span></li>
+                <li>常见问题<span>|</span></li>
+                <li>隐私政策</li>
+            </ul>
+            <div class="last">
+                <p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //获取top下的ul下的li标签
+        let liList = document.querySelectorAll(".top ul li");
+        //获取top下的div
+        let divList = document.querySelectorAll(".top div");
+        let aList = document.querySelectorAll(".top li a");
+        console.log(divList);
+        // console.log(liList);
+        for (var i = 0; i < liList.length; i++) {
+            liList[i].setAttribute("index", i);
+            liList[i].onclick = function () {
+                for (var j = 0; j < divList.length; j++) {
+                    divList[j].className = "hide";
+                    aList[j].style.color = "#757575"
+                }
+                let index = this.getAttribute("index");
+                divList[index].className = "";
+                this.children[0].style.color = "#ff6700";
+            }
+        }
+
+        let username = document.querySelector("#username");
+        let password = document.querySelector("#password");
+        let sub = document.querySelector("#sub");
+        sub.onclick = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get", "http://127.0.0.1:8080/login?name=" + username.value + "&password=" + password.value);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.responseText === "error") {
+                        alert("登录失败，点击去注册");
+                    } else {
+                        alert("登录成功");
+                        location.href = "http://127.0.0.1/小米商城/index.html"
+                    }
+                }
+            }
+        }
+
+        //30天免登录
+        //点击30天免登录按钮
+        cbx.onclick = function () {
+            if (cbx.checked) {
+                let now = new Date();
+                now.setDate(now.getDate() + 30);
+                document.cookie = "username=" + username.value + "; expires=" + now;
+                document.cookie = "password=" + password.value + "; expires=" + now;
+            }
+        }
+        if (document.cookie !== "") {
+            let data = document.cookie.split("; ");
+            console.log(data);
+            var o = {};
+            for (let i = 0; i < data.length; i++) {
+                key = data[i].split("=")[0];
+                o[key] = data[i].split("=")[1];
+            }
+            //将对象的username赋给username的key,将对象的password赋给username的value
+            username.value = o.username;
+            password.value = o.password;
+        }
+
+    </script>
+</body>
+
+</html>

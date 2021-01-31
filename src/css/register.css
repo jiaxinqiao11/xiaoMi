@@ -1,0 +1,108 @@
+
+body {
+    background-color: #F9F9F9;
+}
+#register {
+    height: 640px;
+    width: 100%;
+}
+#register .register-wrap {
+    width: 855px;
+    height: 640px;
+    margin: auto;
+    background-color: #FFFFFF;
+    position: relative;
+}
+#register .register-wrap h2 {
+    width: 855px;
+    height: 49px;
+    text-align: center;
+    margin-top: 0;
+}
+#register .register-wrap img {
+    height: 49px;
+    width: 49px;
+}
+#register .register-wrap h1 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: 50px;
+    color: #333333;
+}
+.zhanghao .name {
+    font-size: 14px;
+    color: #333333;
+}
+.zhanghao input {
+    width: 289px;
+    height: 40px;
+    outline: none;
+}
+.zhanghao .later {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 20px;
+}
+.zhanghao .pass {
+    font-size: 14px;
+    color: #333333;
+}
+.zhanghao {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.zhanghao #btn {
+    margin-top: 30px;
+    color: #FFFFFF;
+    background-color: #FF6700;
+    border: 0;
+}
+#register .register-wrap #read {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 12px;
+    color: #A69DA6;
+}
+.register-wrap #read span {
+    font-weight: 700;
+    color: #333333;
+}
+.bottom {
+    height: 90px;
+    width: 100%;
+    background-color: #F9F9F9;
+}
+.bottom .bottom-wrap {
+    width: 855px;
+    margin: auto;
+    height: 90px;
+}
+.bottom .bottom-wrap ul {
+    position: absolute;
+    left: 49%;
+    transform: translate(-50%,0);
+}
+.bottom .bottom-wrap li {
+    list-style: none;
+    float: left;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #757575;
+}
+.bottom .bottom-wrap p {
+    margin-top: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    color: #9D9D9D;
+}
